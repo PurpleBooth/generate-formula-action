@@ -1,0 +1,50 @@
+on:
+  push:
+    branches:
+    - '*'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  version:
+    uses: PurpleBooth/common-pipelines/.github/workflows/commit-check.yml@v0.2.0
+
+  release:
+    if: github.ref == 'refs/heads/main'
+    needs:
+    - version
+    outputs:
+      version_bump: ${{ steps.versions.outputs.version_bump }}
+      current_version: ${{ steps.versions.outputs.current_version }}
+      previous_version: ${{ steps.versions.outputs.previous_version }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2.3.5
+    - uses: PurpleBooth/versio-release-action@v0.1.2
+      id: versions
+
+  generate-github-release:
+    if: needs.release.outputs.version_bump
+    needs:
+    - release
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2.3.5
+      with:
+        lfs: true
+        fetch-depth: 0
+        ref: v${{ needs.release.outputs.current_version }}
+    - name: Generate a changelog
+      uses: PurpleBooth/changelog-action@v0.1.1
+      with:
+        config: cliff.toml
+        args: --verbose v${{ needs.release.outputs.previous_version }}..v${{ needs.release.outputs.current_version }}
+        output: CHANGELOG.md
+    - id: create_release
+      uses: ncipollo/release-action@v1.8.10
+      with:
+        allowUpdates: true
+        token: ${{ secrets.GITHUB_TOKEN }}
+        bodyFile: CHANGELOG.md
+        name: Release v${{ needs.release.outputs.current_version }}
+        tag: v${{ needs.release.outputs.current_version }}
