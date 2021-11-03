@@ -34,7 +34,7 @@ jobs:
         fetch-depth: 0
         ref: v${{ needs.release.outputs.current_version }}
     - name: Generate a changelog
-      uses: PurpleBooth/changelog-action@v0.1.1
+      uses: PurpleBooth/changelog-action@v0.1.2
       with:
         config: cliff.toml
         args: --verbose v${{ needs.release.outputs.previous_version }}..v${{ needs.release.outputs.current_version }}
