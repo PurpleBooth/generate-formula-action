@@ -81,7 +81,7 @@ runs:
       uses: PurpleBooth/changelog-action@v0.1.1
       with:
         config: main-repo/cliff.toml
-        args: --verbose --latest --repository main-repo
+        args: --verbose v${{ inputs.previous_version }}..v${{ inputs.current_version }} --repository main-repo
         output: CHANGELOG.md
     - shell: bash
       name: Open a PR on the custom tap repository
