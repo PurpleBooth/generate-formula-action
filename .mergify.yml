@@ -4,7 +4,7 @@ queue_rules:
     batch_size: 20
     conditions:
       - status-success~=^version
-      - "#check-pending=0"
+      - "#check-pending<=1"
       - "#check-success>=1"
       - base=main
 
@@ -20,7 +20,7 @@ pull_request_rules:
   - name: automatic rebase for dependencies
     conditions:
       - status-success~=^version
-      - "#check-pending=0"
+      - "#check-pending<=1"
       - "#check-success>=1"
       - base=main
       - author~=^dependabot(|-preview)\[bot\]$
