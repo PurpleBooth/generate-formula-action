@@ -26,7 +26,7 @@ runs:
       run:
         echo ::set-output "name=REPOSITORY_NAME::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")"
       shell: bash
-    - uses: actions/checkout@v2.3.5
+    - uses: actions/checkout@v3
       name: Checkout this repository
       with:
         lfs: true
@@ -42,7 +42,7 @@ runs:
         git_commit_gpgsign: true
         git_tag_gpgsign: true
         workdir: main-repo
-    - uses: actions/checkout@v2.3.5
+    - uses: actions/checkout@v3
       with:
         repository: PurpleBooth/homebrew-repo
         token: ${{ inputs.committer_token }}
@@ -78,7 +78,7 @@ runs:
           file_sha=${{ steps.hash.outputs.SHA256 }}
       name: Generate the template
     - name: Generate a changelog
-      uses: PurpleBooth/changelog-action@v0.1.1
+      uses: PurpleBooth/changelog-action@v0.3.2
       with:
         config: main-repo/cliff.toml
         args: --verbose v${{ inputs.previous_version }}..v${{ inputs.current_version }} --repository main-repo
