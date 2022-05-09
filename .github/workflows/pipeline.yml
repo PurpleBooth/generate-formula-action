@@ -7,7 +7,7 @@ on:
 
 jobs:
   version:
-    uses: PurpleBooth/common-pipelines/.github/workflows/commit-check.yml@v0.2.0
+    uses: PurpleBooth/common-pipelines/.github/workflows/commit-check.yml@main
 
   release:
     if: github.ref == 'refs/heads/main'
