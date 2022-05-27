@@ -40,7 +40,7 @@ jobs:
         args: --verbose v${{ needs.release.outputs.previous_version }}..v${{ needs.release.outputs.current_version }}
         output: CHANGELOG.md
     - id: create_release
-      uses: ncipollo/release-action@v1.9.0
+      uses: ncipollo/release-action@v1.10.0
       with:
         allowUpdates: true
         token: ${{ secrets.GITHUB_TOKEN }}
