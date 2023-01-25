@@ -23,8 +23,7 @@ runs:
   steps:
     - id: get_repository_name
       name: Work out repository name
-      run:
-        echo ::set-output "name=REPOSITORY_NAME::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")"
+      run: echo "REPOSITORY_NAME=$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")" >> "$GITHUB_OUTPUT"
       shell: bash
     - uses: actions/checkout@v3
       name: Checkout this repository
@@ -68,7 +67,7 @@ runs:
         GIT_REPO: ${{ github.repository }}
         GIT_TAG: v${{ inputs.current_version }}
       name: Calculate the binary hash
-    - uses: cuchi/jinja2-action@v1.2.0
+    - uses: cuchi/jinja2-action@v1.2.1
       with:
         template: main-repo/homebrew/formula.rb.j2
         output_file: formula.rb
