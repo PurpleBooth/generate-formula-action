@@ -60,7 +60,7 @@ runs:
     - run: |
         curl -Lo file.tar.gz "https://github.com/$GIT_REPO/archive/$GIT_TAG.tar.gz"
         sha256sum -b file.tar.gz | awk '{ print $1 }' > hash
-        echo ::set-output "name=SHA256::$( cat hash )"
+        echo "SHA256=$( cat hash )" >> "$GITHUB_OUTPUT"
       id: hash
       shell: bash
       env:
