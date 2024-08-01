@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.1.13](https://github.com/PurpleBooth/generate-formula-action/compare/86c27ee5d248b4f3d6d3dd43fe183eaf0bb06148..v0.1.13) - 2024-08-01
+#### Bug Fixes
+- Ignore creation failure - ([86c27ee](https://github.com/PurpleBooth/generate-formula-action/commit/86c27ee5d248b4f3d6d3dd43fe183eaf0bb06148)) - Billie Thompson
+
+- - -
+
 ## [v0.1.12](https://github.com/PurpleBooth/generate-formula-action/compare/dc8ddc7a5380649a042920c83e5d4e12302da0c0..v0.1.12) - 2024-08-01
 #### Bug Fixes
 - Allow force pushing to enable runs - ([915dfc3](https://github.com/PurpleBooth/generate-formula-action/commit/915dfc3c72616ce992043760526c598a00e42414)) - Billie Thompson
