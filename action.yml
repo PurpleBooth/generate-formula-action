@@ -25,7 +25,7 @@ runs:
       name: Work out repository name
       run: echo "REPOSITORY_NAME=$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")" >> "$GITHUB_OUTPUT"
       shell: bash
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
       name: Checkout this repository
       with:
         lfs: true
@@ -33,7 +33,7 @@ runs:
         path: main-repo
         ref: v${{ inputs.current_version }}
     - name: Import GPG key
-      uses: crazy-max/ghaction-import-gpg@v5
+      uses: crazy-max/ghaction-import-gpg@d6f3f49f3345e29369fe57596a3ca8f94c4d2ca7 # v5
       with:
         gpg_private_key: ${{ inputs.gpg_private_key }}
         passphrase: ${{ inputs.gpg_passphrase }}
@@ -41,7 +41,7 @@ runs:
         git_commit_gpgsign: true
         git_tag_gpgsign: true
         workdir: main-repo
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
       with:
         repository: PurpleBooth/homebrew-repo
         token: ${{ inputs.committer_token }}
@@ -49,7 +49,7 @@ runs:
         ref: main
       name: Checkout the custom tap
     - name: Import GPG key
-      uses: crazy-max/ghaction-import-gpg@v5
+      uses: crazy-max/ghaction-import-gpg@d6f3f49f3345e29369fe57596a3ca8f94c4d2ca7 # v5
       with:
         gpg_private_key: ${{ inputs.gpg_private_key }}
         passphrase: ${{ inputs.gpg_passphrase }}
@@ -67,7 +67,7 @@ runs:
         GIT_REPO: ${{ github.repository }}
         GIT_TAG: v${{ inputs.current_version }}
       name: Calculate the binary hash
-    - uses: cuchi/jinja2-action@v1.2.0
+    - uses: cuchi/jinja2-action@1149b92d9ea6db61d7f71c22e3d5028d8065f140 # v1.2.0
       with:
         template: main-repo/homebrew/formula.rb.j2
         output_file: formula.rb
@@ -77,7 +77,7 @@ runs:
           file_sha=${{ steps.hash.outputs.SHA256 }}
       name: Generate the template
     - name: Generate a changelog
-      uses: PurpleBooth/changelog-action@v0.3.3
+      uses: PurpleBooth/changelog-action@ceaac4a8990352de3b83099444e2909738371425 # v0.3.3
       with:
         config: main-repo/cliff.toml
         args: --verbose v${{ inputs.previous_version }}..v${{ inputs.current_version }} --repository main-repo
