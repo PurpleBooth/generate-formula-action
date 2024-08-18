@@ -57,19 +57,19 @@ jobs:
     - release
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
       with:
         lfs: true
         fetch-depth: 0
         ref: v${{ needs.release.outputs.current_version }}
     - name: Generate a changelog
-      uses: PurpleBooth/changelog-action@v0.3.3
+      uses: PurpleBooth/changelog-action@ceaac4a8990352de3b83099444e2909738371425 # v0.3.3
       with:
         config: cliff.toml
         args: --verbose v${{ needs.release.outputs.previous_version }}..v${{ needs.release.outputs.current_version }}
         output: CHANGELOG.md
     - id: create_release
-      uses: ncipollo/release-action@v1.9.0
+      uses: ncipollo/release-action@40bb172bd05f266cf9ba4ff965cb61e9ee5f6d01 # v1.9.0
       with:
         allowUpdates: true
         token: ${{ secrets.GITHUB_TOKEN }}
