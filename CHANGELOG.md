@@ -2,6 +2,21 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.1.14](https://github.com/PurpleBooth/generate-formula-action/compare/b0df6230c3d9de6536a6bfae12c2a79908cca1b4..v0.1.14) - 2024-08-20
+#### Bug Fixes
+- remove duplicated $ - ([70315e1](https://github.com/PurpleBooth/generate-formula-action/commit/70315e14cfbe3cba12297df7340bfe1349aea384)) - Billie Thompson
+#### Continuous Integration
+- Use cog to generate changelog - ([7bebb08](https://github.com/PurpleBooth/generate-formula-action/commit/7bebb08fc466f5ea26515c6cd266100c70e2fe70)) - Billie Thompson
+- Remove mergify - ([b0df623](https://github.com/PurpleBooth/generate-formula-action/commit/b0df6230c3d9de6536a6bfae12c2a79908cca1b4)) - Billie Thompson
+#### Miscellaneous Chores
+- **(deps)** update crazy-max/ghaction-import-gpg action to v6 - ([a41062e](https://github.com/PurpleBooth/generate-formula-action/commit/a41062e824aefd4c33b0321d27a9136cf965dbfe)) - renovate[bot]
+- **(deps)** update actions/checkout action to v4 - ([36258c8](https://github.com/PurpleBooth/generate-formula-action/commit/36258c81d1109d39bd78c634679ec998f6237c24)) - renovate[bot]
+- **(deps)** update ncipollo/release-action action to v1.14.0 - ([145c814](https://github.com/PurpleBooth/generate-formula-action/commit/145c814e12fa78d5f2fe53424e94629578acfbc2)) - renovate[bot]
+- **(deps)** update cuchi/jinja2-action action to v1.2.2 - ([b9738e0](https://github.com/PurpleBooth/generate-formula-action/commit/b9738e0b8a29f8e4f8eae475022781d299183334)) - renovate[bot]
+- **(deps)** pin dependencies - ([fed4389](https://github.com/PurpleBooth/generate-formula-action/commit/fed4389ded6de95730a5e27cd1f7885ee1f7254f)) - renovate[bot]
+
+- - -
+
 ## [v0.1.13](https://github.com/PurpleBooth/generate-formula-action/compare/86c27ee5d248b4f3d6d3dd43fe183eaf0bb06148..v0.1.13) - 2024-08-01
 #### Bug Fixes
 - Ignore creation failure - ([86c27ee](https://github.com/PurpleBooth/generate-formula-action/commit/86c27ee5d248b4f3d6d3dd43fe183eaf0bb06148)) - Billie Thompson
