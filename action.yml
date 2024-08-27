@@ -77,7 +77,7 @@ runs:
           file_sha=${{ steps.hash.outputs.SHA256 }}
       name: Generate the template
     - name: Generate a changelog
-      uses: PurpleBooth/changelog-action@ceaac4a8990352de3b83099444e2909738371425 # v0.3.3
+      uses: PurpleBooth/changelog-action@619c4b782e4d2791e527361acdad0539b4e500d3 # v0.3.4
       with:
         config: main-repo/cliff.toml
         args: --verbose v${{ inputs.previous_version }}..v${{ inputs.current_version }} --repository main-repo
