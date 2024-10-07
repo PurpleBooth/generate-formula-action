@@ -25,7 +25,7 @@ runs:
       name: Work out repository name
       run: echo "REPOSITORY_NAME=$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")" >> "$GITHUB_OUTPUT"
       shell: bash
-    - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+    - uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4
       name: Checkout this repository
       with:
         lfs: true
@@ -41,7 +41,7 @@ runs:
         git_commit_gpgsign: true
         git_tag_gpgsign: true
         workdir: main-repo
-    - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+    - uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4
       with:
         repository: PurpleBooth/homebrew-repo
         token: ${{ inputs.committer_token }}
