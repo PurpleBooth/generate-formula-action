@@ -33,7 +33,7 @@ runs:
         path: main-repo
         ref: v${{ inputs.current_version }}
     - name: Import GPG key
-      uses: crazy-max/ghaction-import-gpg@01dd5d3ca463c7f10f7f4f7b4f177225ac661ee4 # v6
+      uses: crazy-max/ghaction-import-gpg@cb9bde2e2525e640591a934b1fd28eef1dcaf5e5 # v6
       with:
         gpg_private_key: ${{ inputs.gpg_private_key }}
         passphrase: ${{ inputs.gpg_passphrase }}
@@ -49,7 +49,7 @@ runs:
         ref: main
       name: Checkout the custom tap
     - name: Import GPG key
-      uses: crazy-max/ghaction-import-gpg@01dd5d3ca463c7f10f7f4f7b4f177225ac661ee4 # v6
+      uses: crazy-max/ghaction-import-gpg@cb9bde2e2525e640591a934b1fd28eef1dcaf5e5 # v6
       with:
         gpg_private_key: ${{ inputs.gpg_private_key }}
         passphrase: ${{ inputs.gpg_passphrase }}
