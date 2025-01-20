@@ -67,7 +67,7 @@ runs:
         GIT_REPO: ${{ github.repository }}
         GIT_TAG: v${{ inputs.current_version }}
       name: Calculate the binary hash
-    - uses: cuchi/jinja2-action@6d31ec73a23fdd391e21e3efce8a91a87762980d # v1.2.2
+    - uses: cuchi/jinja2-action@8bd801365a8d36a0b20f45ee969161685de7785a # v1.3.0
       with:
         template: main-repo/homebrew/formula.rb.j2
         output_file: formula.rb
