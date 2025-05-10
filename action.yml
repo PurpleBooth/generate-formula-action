@@ -67,15 +67,17 @@ runs:
         GIT_REPO: ${{ github.repository }}
         GIT_TAG: v${{ inputs.current_version }}
       name: Calculate the binary hash
-    - uses: cuchi/jinja2-action@8bd801365a8d36a0b20f45ee969161685de7785a # v1.3.0
-      with: # AI! Replace this with some other method of turning the Jinja2 template as this action is broken
-        template: main-repo/homebrew/formula.rb.j2
-        output_file: formula.rb
-        variables: |
-          github_repo=${{ github.repository }}
-          git_tag=v${{ inputs.current_version }}
-          file_sha=${{ steps.hash.outputs.SHA256 }}
-      name: Generate the template
+    - name: Generate the template
+      shell: bash
+      run: |
+        pip install jinja2
+        python main-repo/scripts/render_template.py
+      env:
+        TEMPLATE_PATH: main-repo/homebrew/formula.rb.j2
+        OUTPUT_FILE: formula.rb
+        GITHUB_REPO: ${{ github.repository }}
+        GIT_TAG: v${{ inputs.current_version }}
+        FILE_SHA: ${{ steps.hash.outputs.SHA256 }}
     - name: Generate a changelog
       uses: PurpleBooth/changelog-action@619c4b782e4d2791e527361acdad0539b4e500d3 # v0.3.4
       with:
