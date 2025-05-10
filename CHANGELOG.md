@@ -2,6 +2,21 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.1.15](https://github.com/PurpleBooth/generate-formula-action/compare/af60cd399f09a611b3403a1debc37fe152da66b3..v0.1.15) - 2025-05-10
+#### Bug Fixes
+- roll back to older version that isn't broken - ([09e2138](https://github.com/PurpleBooth/generate-formula-action/commit/09e2138abd4b97a30105dc46371b9b1aab601760)) - Billie Thompson
+#### Miscellaneous Chores
+- **(deps)** update crazy-max/ghaction-import-gpg digest to e89d409 (#80) - ([bea8a90](https://github.com/PurpleBooth/generate-formula-action/commit/bea8a90a19145d28eb44069bd1ec0fb91d35beb8)) - renovate[bot]
+- **(deps)** update ncipollo/release-action action to v1.16.0 (#79) - ([81e5b72](https://github.com/PurpleBooth/generate-formula-action/commit/81e5b721afb888e7066d40f99c2b701aaed1d418)) - renovate[bot]
+- **(deps)** update cuchi/jinja2-action action to v1.3.0 (#78) - ([ae94223](https://github.com/PurpleBooth/generate-formula-action/commit/ae9422327c42a2942ae05febd030ddbefd2a7d5e)) - renovate[bot]
+- **(deps)** update ncipollo/release-action action to v1.15.0 (#77) - ([a7a7944](https://github.com/PurpleBooth/generate-formula-action/commit/a7a794412fde46d34d6eb97a9f1bc307279080f4)) - renovate[bot]
+- **(deps)** update crazy-max/ghaction-import-gpg digest to cb9bde2 - ([cba49a8](https://github.com/PurpleBooth/generate-formula-action/commit/cba49a8d6ff5fa55e940f8276b11491cb3a3ccb0)) - renovate[bot]
+- **(deps)** update actions/checkout digest to 11bd719 - ([09fed71](https://github.com/PurpleBooth/generate-formula-action/commit/09fed71d893b6e49a18c96b43fa3c724543b15c3)) - renovate[bot]
+- **(deps)** update actions/checkout digest to eef6144 - ([1d649e3](https://github.com/PurpleBooth/generate-formula-action/commit/1d649e302d5d8daeb5eef88090927e835e624ebc)) - renovate[bot]
+- **(deps)** update purplebooth/changelog-action action to v0.3.4 - ([af60cd3](https://github.com/PurpleBooth/generate-formula-action/commit/af60cd399f09a611b3403a1debc37fe152da66b3)) - renovate[bot]
+
+- - -
+
 ## [v0.1.14](https://github.com/PurpleBooth/generate-formula-action/compare/b0df6230c3d9de6536a6bfae12c2a79908cca1b4..v0.1.14) - 2024-08-20
 #### Bug Fixes
 - remove duplicated $ - ([70315e1](https://github.com/PurpleBooth/generate-formula-action/commit/70315e14cfbe3cba12297df7340bfe1349aea384)) - Billie Thompson
