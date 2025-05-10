@@ -68,7 +68,7 @@ runs:
         GIT_TAG: v${{ inputs.current_version }}
       name: Calculate the binary hash
     - uses: cuchi/jinja2-action@8bd801365a8d36a0b20f45ee969161685de7785a # v1.3.0
-      with:
+      with: # AI! Replace this with some other method of turning the Jinja2 template as this action is broken
         template: main-repo/homebrew/formula.rb.j2
         output_file: formula.rb
         variables: |
