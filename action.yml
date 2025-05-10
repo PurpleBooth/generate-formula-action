@@ -69,9 +69,7 @@ runs:
       name: Calculate the binary hash
     - name: Generate the template
       shell: bash
-      run: |
-        pip install jinja2 || true
-        python main-repo/scripts/render_template.py
+      run: pip install jinja2 || true; python -c "import os; from jinja2 import Environment, FileSystemLoader; tp=os.environ['TEMPLATE_PATH']; of=os.environ['OUTPUT_FILE']; gr=os.environ['GITHUB_REPO']; gt=os.environ['GIT_TAG']; fs=os.environ['FILE_SHA']; env=Environment(loader=FileSystemLoader(os.path.dirname(tp))); t=env.get_template(os.path.basename(tp)); open(of, 'w').write(t.render(github_repo=gr, git_tag=gt, file_sha=fs))"
       env:
         TEMPLATE_PATH: main-repo/homebrew/formula.rb.j2
         OUTPUT_FILE: formula.rb
