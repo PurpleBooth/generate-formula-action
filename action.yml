@@ -70,7 +70,7 @@ runs:
     - name: Generate the template
       shell: bash
       run: |
-        pip install jinja2
+        pip install jinja2 || true
         python main-repo/scripts/render_template.py
       env:
         TEMPLATE_PATH: main-repo/homebrew/formula.rb.j2
