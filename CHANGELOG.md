@@ -2,6 +2,22 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.1.16](https://github.com/PurpleBooth/generate-formula-action/compare/e5faf652da175543fda9dbab09c784b95e4a32b8..v0.1.16) - 2025-05-10
+#### Bug Fixes
+- Add __init__.py to resolve mypy module duplication error - ([e5d88f1](https://github.com/PurpleBooth/generate-formula-action/commit/e5d88f1ca47b0c27a67208cf6d80be558b124562)) - Billie Thompson (aider)
+- Add __init__.py to resolve mypy module resolution error - ([f61b7f5](https://github.com/PurpleBooth/generate-formula-action/commit/f61b7f56be1f5b798df21763d6fe901f8ec5d9cf)) - Billie Thompson (aider)
+#### Continuous Integration
+- Install mypy in GitHub Actions workflow - ([7e9a085](https://github.com/PurpleBooth/generate-formula-action/commit/7e9a085216a10813d1ba2f608e94f995c81acbf7)) - Billie Thompson (aider)
+#### Miscellaneous Chores
+- **(deps)** update cuchi/jinja2-action action to v1.3.0 - ([e5faf65](https://github.com/PurpleBooth/generate-formula-action/commit/e5faf652da175543fda9dbab09c784b95e4a32b8)) - renovate[bot]
+- Make Jinja2 installation optional in action.yml - ([ee2d2c8](https://github.com/PurpleBooth/generate-formula-action/commit/ee2d2c8c76f1c2a172d053b5f493145be96fa9c9)) - Billie Thompson
+- Update .gitignore and remove mypy from pip install in action.yml - ([035cac6](https://github.com/PurpleBooth/generate-formula-action/commit/035cac6f4c564e95ea790fe0fc3a2b1ab3c33f03)) - Billie Thompson
+- Update Jinja2 action comment for template processing - ([2c1558e](https://github.com/PurpleBooth/generate-formula-action/commit/2c1558e372b733472ce091c701f7d6848e3d6978)) - Billie Thompson
+#### Refactoring
+- replace jinja2-action with direct Python script execution - ([5e352f2](https://github.com/PurpleBooth/generate-formula-action/commit/5e352f23b63fe1f6146a6362b9183a51482fcda6)) - Billie Thompson (aider)
+
+- - -
+
 ## [v0.1.15](https://github.com/PurpleBooth/generate-formula-action/compare/af60cd399f09a611b3403a1debc37fe152da66b3..v0.1.15) - 2025-05-10
 #### Bug Fixes
 - roll back to older version that isn't broken - ([09e2138](https://github.com/PurpleBooth/generate-formula-action/commit/09e2138abd4b97a30105dc46371b9b1aab601760)) - Billie Thompson
