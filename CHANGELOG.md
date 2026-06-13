@@ -2,6 +2,19 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.1.17](https://github.com/PurpleBooth/generate-formula-action/compare/6d754d5557b39d2865c55e640a7895aa50599a26..v0.1.17) - 2026-06-13
+#### Bug Fixes
+- add git-log fallback for changelog generation - ([036af05](https://github.com/PurpleBooth/generate-formula-action/commit/036af059519e2999ffca2487bd8a38d72cb4f654)) - Billie Thompson
+- replace git-cliff changelog with cocogitto - ([83d56aa](https://github.com/PurpleBooth/generate-formula-action/commit/83d56aa538d7a5e0366fbb9b3c5d021c3b877974)) - Billie Thompson
+#### Refactoring
+- Consolidate template generation into a single command in workflow - ([6d754d5](https://github.com/PurpleBooth/generate-formula-action/commit/6d754d5557b39d2865c55e640a7895aa50599a26)) - Billie Thompson (aider)
+#### Miscellaneous Chores
+- remove custom package rules from renovate.json - ([18e7200](https://github.com/PurpleBooth/generate-formula-action/commit/18e720024a279a7fd393ecbe1ffd37f497819a9f)) - Billie Thompson
+- widen dependency range strategy in renovate.json - ([5c2bdbb](https://github.com/PurpleBooth/generate-formula-action/commit/5c2bdbb7f7da8696fd728853dfac747d21aae7aa)) - Billie Thompson
+- Remove unused package initialization and template rendering files - ([6b38f30](https://github.com/PurpleBooth/generate-formula-action/commit/6b38f30549aa8c207b11a878d7652725f3924882)) - Billie Thompson
+
+- - -
+
 ## [v0.1.16](https://github.com/PurpleBooth/generate-formula-action/compare/e5faf652da175543fda9dbab09c784b95e4a32b8..v0.1.16) - 2025-05-10
 #### Bug Fixes
 - Add __init__.py to resolve mypy module duplication error - ([e5d88f1](https://github.com/PurpleBooth/generate-formula-action/commit/e5d88f1ca47b0c27a67208cf6d80be558b124562)) - Billie Thompson (aider)
