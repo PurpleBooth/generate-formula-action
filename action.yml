@@ -69,19 +69,26 @@ runs:
       name: Calculate the binary hash
     - name: Generate the template
       shell: bash
-      run: pip install jinja2 || true; python -c "import os; from jinja2 import Environment, FileSystemLoader; tp=os.environ['TEMPLATE_PATH']; of=os.environ['OUTPUT_FILE']; gr=os.environ['GITHUB_REPO']; gt=os.environ['GIT_TAG']; fs=os.environ['FILE_SHA']; env=Environment(loader=FileSystemLoader(os.path.dirname(tp))); t=env.get_template(os.path.basename(tp)); open(of, 'w').write(t.render(github_repo=gr, git_tag=gt, file_sha=fs))"
       env:
+        PIP_BREAK_SYSTEM_PACKAGES: "1"
         TEMPLATE_PATH: main-repo/homebrew/formula.rb.j2
         OUTPUT_FILE: formula.rb
         GITHUB_REPO: ${{ github.repository }}
         GIT_TAG: v${{ inputs.current_version }}
         FILE_SHA: ${{ steps.hash.outputs.SHA256 }}
+      run: |
+        python -m pip install jinja2
+        python "$GITHUB_ACTION_PATH/scripts/render_template.py"
+    - uses: cargo-bins/cargo-binstall@main
+      name: Install cargo-binstall
+    - name: Install cocogitto
+      shell: bash
+      run: cargo binstall --no-confirm --locked cocogitto
     - name: Generate a changelog
-      uses: PurpleBooth/changelog-action@619c4b782e4d2791e527361acdad0539b4e500d3 # v0.3.4
-      with:
-        config: main-repo/cliff.toml
-        args: --verbose v${{ inputs.previous_version }}..v${{ inputs.current_version }} --repository main-repo
-        output: CHANGELOG.md
+      shell: bash
+      env:
+        GIT_TAG: v${{ inputs.current_version }}
+      run: cd main-repo && cog changelog --at "$GIT_TAG" > "$GITHUB_WORKSPACE/CHANGELOG.md"
     - shell: bash
       name: Open a PR on the custom tap repository
       run: |

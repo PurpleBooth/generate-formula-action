@@ -9,11 +9,23 @@ jobs:
   version:
     uses: PurpleBooth/common-pipelines/.github/workflows/commit-check.yml@main
 
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: python -m pip install -r requirements.txt
+    - name: Run tests
+      run: PYTHONPATH=scripts python -m pytest tests/ -v
 
   release:
     if: github.ref == 'refs/heads/main'
     needs:
     - version
+    - test
     outputs:
       version_bump: ${{ steps.current_version.outputs.current_version != steps.previous_version.outputs.previous_version
         }}

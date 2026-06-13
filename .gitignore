@@ -1,2 +1,6 @@
 /.versio-paused
 .aider*
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
