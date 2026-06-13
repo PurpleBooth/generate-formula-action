@@ -87,8 +87,11 @@ runs:
     - name: Generate a changelog
       shell: bash
       env:
-        GIT_TAG: v${{ inputs.current_version }}
-      run: cd main-repo && cog changelog --at "$GIT_TAG" > "$GITHUB_WORKSPACE/CHANGELOG.md"
+        REPO_PATH: main-repo
+        CURRENT_TAG: v${{ inputs.current_version }}
+        PREVIOUS_TAG: v${{ inputs.previous_version }}
+      run: |
+        python "$GITHUB_ACTION_PATH/scripts/generate_changelog.py" > "$GITHUB_WORKSPACE/CHANGELOG.md"
     - shell: bash
       name: Open a PR on the custom tap repository
       run: |
